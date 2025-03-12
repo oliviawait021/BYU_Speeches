@@ -31,7 +31,7 @@ const EventPopup: React.FC<EventPopupProps> = ({ date, events, onClose }) => {
   );
 };
 
-const styles = {
+const styles: { [key: string]: React.CSSProperties } = {
   popup: {
     position: "fixed",
     bottom: "60px",
