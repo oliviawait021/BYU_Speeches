@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import CalendarView from "../components/Calendar"; // <-- adjust path if needed
-import EventPopup from "../components/EventPopup"; // <-- adjust path if needed
+import CalendarView from "../components/Calendar";
+import EventPopup from "../components/EventPopup";
 
 const CalendarPage: React.FC = () => {
-  // State to track what day is selected
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-  // Example events - you could later load these from an API
+  // Example events - could later load these from an API
   const events = [
     { date: 3, speaker: "President Nelson" },
     { date: 10, speaker: "Gary E. Stevenson" },
@@ -15,7 +14,6 @@ const CalendarPage: React.FC = () => {
     { date: 31, speaker: "Dallin H. Oaks" },
   ];
 
-  // When a user clicks a date on the calendar
   const handleDateClick = (date: Date) => {
     console.log("Clicked date:", date);
 
@@ -46,7 +44,6 @@ const CalendarPage: React.FC = () => {
   );
 };
 
-// Optional styles for layout
 const styles = {
   pageContainer: {
     display: "flex",
