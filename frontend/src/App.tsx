@@ -1,5 +1,6 @@
 import React from "react";
 import { Search, Menu } from "lucide-react";
+import MyCalendar from './Calendar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Home, Search as SearchIcon, Layout } from "lucide-react";
 
