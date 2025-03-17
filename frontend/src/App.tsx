@@ -2,8 +2,7 @@ import React from "react";
 import { Search, Menu } from "lucide-react";
 import CalendarPage from "./CalendarPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Home, Search as SearchIcon, Layout } from "lucide-react";
-
+import Layout from "../components/Layout";
 function Header() {
   return (
     <>
@@ -49,37 +48,39 @@ function Card({
 
 export default function App() {
   return (
-    <div className="flex justify-center items-center h-screen w-full bg-gray-900 text-white">
-      <div className="container min-vh-100 d-flex flex-column justify-content-center text-white bg-dark">
-        <Header />
-        <Search className="w-5 h-5 text-secondary mb-3" />
+    <Layout> 
+      <div className="flex justify-center items-center h-screen w-full bg-gray-900 text-white">
+        <div className="container min-vh-100 d-flex flex-column justify-content-center text-white bg-dark">
+          <Header />
+          <Search className="w-5 h-5 text-secondary mb-3" />
 
-        <div className="row">
-          {/* Announcements */}
-          <div className="col-md-6">
-            <Card title="Announcements" image="/src/img/pres_nelson.webp">
-              <p className="text-primary text-sm">Upcoming Speeches</p>
-              <p className="text-info fw-bold">President Nelson</p>
-              <p className="text-secondary text-xs">March 11, 2024</p>
-            </Card>
-          </div>
+          <div className="row">
+            {/* Announcements */}
+            <div className="col-md-6">
+              <Card title="Announcements" image="/src/img/pres_nelson.webp">
+                <p className="text-primary text-sm">Upcoming Speeches</p>
+                <p className="text-info fw-bold">President Nelson</p>
+                <p className="text-secondary text-xs">March 11, 2024</p>
+              </Card>
+            </div>
 
-          {/* Verse of the Day */}
-          <div className="col-md-6">
-            <Card title="Verse of the Day">
-              <p className="fst-italic text-info">
-                “Education is the power to think clearly...”
-              </p>
-              <p className="text-info fw-bold">- David O. McKay</p>
-            </Card>
-          </div>
+            {/* Verse of the Day */}
+            <div className="col-md-6">
+              <Card title="Verse of the Day">
+                <p className="fst-italic text-info">
+                  “Education is the power to think clearly...”
+                </p>
+                <p className="text-info fw-bold">- David O. McKay</p>
+              </Card>
+            </div>
 
-          {/* Browse Topics */}
-          <div className="col-12">
-            <Card title="Topics to Browse" />
+            {/* Browse Topics */}
+            <div className="col-12">
+              <Card title="Topics to Browse" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
