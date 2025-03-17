@@ -74,6 +74,7 @@ export default function App() {
             </Card>
           </div>
 
+          <CalendarPage />
           {/* Browse Topics */}
           <div className="col-12">
             <Card title="Topics to Browse" />
