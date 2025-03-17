@@ -26,6 +26,9 @@ namespace BYUSpeechesApp.Migrations
                     b.Property<int>("SpeechId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("SpeechInfoSpeechId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("SpeechTitle")
                         .HasColumnType("TEXT");
 
@@ -36,6 +39,10 @@ namespace BYUSpeechesApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("SaveId");
+
+                    b.HasIndex("SpeechInfoSpeechId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("SavedSpeeches");
                 });
@@ -112,10 +119,17 @@ namespace BYUSpeechesApp.Migrations
                     b.Property<int>("SpeechId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("SpeechInfoSpeechId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("NoteId");
+
+                    b.HasIndex("SpeechInfoSpeechId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("SpeechNotes");
                 });
@@ -151,6 +165,44 @@ namespace BYUSpeechesApp.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("BYUSpeechesApp.Data.SavedSpeeches", b =>
+                {
+                    b.HasOne("BYUSpeechesApp.Data.SpeechInfo", "SpeechInfo")
+                        .WithMany()
+                        .HasForeignKey("SpeechInfoSpeechId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BYUSpeechesApp.Data.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SpeechInfo");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BYUSpeechesApp.Data.SpeechNotes", b =>
+                {
+                    b.HasOne("BYUSpeechesApp.Data.SpeechInfo", "SpeechInfo")
+                        .WithMany()
+                        .HasForeignKey("SpeechInfoSpeechId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BYUSpeechesApp.Data.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SpeechInfo");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

@@ -11,7 +11,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SpeechDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("SpeechConnection")));
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("SpeechConnection"));
+});
+    
 
 var app = builder.Build();
 
