@@ -26,9 +26,6 @@ namespace BYUSpeechesApp.Migrations
                     b.Property<int>("SpeechId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("SpeechInfoSpeechId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("SpeechTitle")
                         .HasColumnType("TEXT");
 
@@ -40,7 +37,7 @@ namespace BYUSpeechesApp.Migrations
 
                     b.HasKey("SaveId");
 
-                    b.HasIndex("SpeechInfoSpeechId");
+                    b.HasIndex("SpeechId");
 
                     b.HasIndex("UserId");
 
@@ -119,15 +116,12 @@ namespace BYUSpeechesApp.Migrations
                     b.Property<int>("SpeechId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("SpeechInfoSpeechId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("NoteId");
 
-                    b.HasIndex("SpeechInfoSpeechId");
+                    b.HasIndex("SpeechId");
 
                     b.HasIndex("UserId");
 
@@ -171,7 +165,7 @@ namespace BYUSpeechesApp.Migrations
                 {
                     b.HasOne("BYUSpeechesApp.Data.SpeechInfo", "SpeechInfo")
                         .WithMany()
-                        .HasForeignKey("SpeechInfoSpeechId")
+                        .HasForeignKey("SpeechId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -190,7 +184,7 @@ namespace BYUSpeechesApp.Migrations
                 {
                     b.HasOne("BYUSpeechesApp.Data.SpeechInfo", "SpeechInfo")
                         .WithMany()
-                        .HasForeignKey("SpeechInfoSpeechId")
+                        .HasForeignKey("SpeechId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

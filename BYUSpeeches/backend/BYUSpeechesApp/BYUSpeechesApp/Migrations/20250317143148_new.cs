@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BYUSpeechesApp.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class @new : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,7 +72,6 @@ namespace BYUSpeechesApp.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
                     SpeechId = table.Column<int>(type: "INTEGER", nullable: false),
-                    SpeechInfoSpeechId = table.Column<int>(type: "INTEGER", nullable: false),
                     SpeechTitle = table.Column<string>(type: "TEXT", nullable: true),
                     Status = table.Column<string>(type: "TEXT", nullable: true)
                 },
@@ -80,8 +79,8 @@ namespace BYUSpeechesApp.Migrations
                 {
                     table.PrimaryKey("PK_SavedSpeeches", x => x.SaveId);
                     table.ForeignKey(
-                        name: "FK_SavedSpeeches_SpeechInfos_SpeechInfoSpeechId",
-                        column: x => x.SpeechInfoSpeechId,
+                        name: "FK_SavedSpeeches_SpeechInfos_SpeechId",
+                        column: x => x.SpeechId,
                         principalTable: "SpeechInfos",
                         principalColumn: "SpeechId",
                         onDelete: ReferentialAction.Cascade);
@@ -101,7 +100,6 @@ namespace BYUSpeechesApp.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
                     SpeechId = table.Column<int>(type: "INTEGER", nullable: false),
-                    SpeechInfoSpeechId = table.Column<int>(type: "INTEGER", nullable: false),
                     NoteText = table.Column<string>(type: "TEXT", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
@@ -109,8 +107,8 @@ namespace BYUSpeechesApp.Migrations
                 {
                     table.PrimaryKey("PK_SpeechNotes", x => x.NoteId);
                     table.ForeignKey(
-                        name: "FK_SpeechNotes_SpeechInfos_SpeechInfoSpeechId",
-                        column: x => x.SpeechInfoSpeechId,
+                        name: "FK_SpeechNotes_SpeechInfos_SpeechId",
+                        column: x => x.SpeechId,
                         principalTable: "SpeechInfos",
                         principalColumn: "SpeechId",
                         onDelete: ReferentialAction.Cascade);
@@ -123,9 +121,9 @@ namespace BYUSpeechesApp.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SavedSpeeches_SpeechInfoSpeechId",
+                name: "IX_SavedSpeeches_SpeechId",
                 table: "SavedSpeeches",
-                column: "SpeechInfoSpeechId");
+                column: "SpeechId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SavedSpeeches_UserId",
@@ -133,9 +131,9 @@ namespace BYUSpeechesApp.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SpeechNotes_SpeechInfoSpeechId",
+                name: "IX_SpeechNotes_SpeechId",
                 table: "SpeechNotes",
-                column: "SpeechInfoSpeechId");
+                column: "SpeechId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SpeechNotes_UserId",
