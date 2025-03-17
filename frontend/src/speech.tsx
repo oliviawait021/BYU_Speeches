@@ -124,13 +124,12 @@ function IPhone() {
   );
 }
 
-function App() {
-  return (
-    <>
-      <StatusBar />
-      <ContentSection />
-      <ControlsSection />
-      <IPhone />
-    </>
-  );
-}
+export default IPhone;
+
+// function App() {
+//   return (
+//     <>
+//       <IPhone />
+//     </>
+//   );
+// }
