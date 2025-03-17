@@ -11,6 +11,7 @@ public class SpeechInfo
     public string? SpeakerBio { get; set; }
     [Required]
     public string SpeechTitle { get; set; }
+    public string Topic { get; set; }
     public TimeSpan? DurationOfSpeech { get; set; }
     public DateTime? ScheduleDate { get; set; }
     public DateTime? DateSpeechGiven { get; set; }

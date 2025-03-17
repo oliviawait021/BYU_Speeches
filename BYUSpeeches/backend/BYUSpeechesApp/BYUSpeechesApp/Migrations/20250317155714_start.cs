@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BYUSpeechesApp.Migrations
 {
     /// <inheritdoc />
-    public partial class @new : Migration
+    public partial class start : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,6 +36,7 @@ namespace BYUSpeechesApp.Migrations
                     Speaker = table.Column<string>(type: "TEXT", nullable: false),
                     SpeakerBio = table.Column<string>(type: "TEXT", nullable: true),
                     SpeechTitle = table.Column<string>(type: "TEXT", nullable: false),
+                    Topic = table.Column<string>(type: "TEXT", nullable: false),
                     DurationOfSpeech = table.Column<TimeSpan>(type: "TEXT", nullable: true),
                     ScheduleDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     DateSpeechGiven = table.Column<DateTime>(type: "TEXT", nullable: true),

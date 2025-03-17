@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BYUSpeechesApp.Migrations
 {
     [DbContext(typeof(SpeechDbContext))]
-    [Migration("20250317143148_new")]
-    partial class @new
+    [Migration("20250317155714_start")]
+    partial class start
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,6 +96,10 @@ namespace BYUSpeechesApp.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("SpeechTitle")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Topic")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

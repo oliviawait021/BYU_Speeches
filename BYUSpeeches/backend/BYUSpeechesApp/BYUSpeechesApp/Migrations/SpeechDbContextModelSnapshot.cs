@@ -96,6 +96,10 @@ namespace BYUSpeechesApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Topic")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("SpeechId");
 
                     b.ToTable("SpeechInfos");
