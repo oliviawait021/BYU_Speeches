@@ -9,7 +9,7 @@ function Header() {
       <div className="container">
         {/* Header */}
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h1 className="h4 fw-bold pt-4 justify-content-center">BYU Speeches</h1>
+          <h1 className="h4 fw-bold pt-4 ml-6">BYU Speeches</h1>
         </div>
       </div>
     </>
@@ -52,14 +52,13 @@ export default function App() {
     <Layout> 
       <div className="flex justify-center items-center h-screen w-full bg-gray-900 text-white">
         <div className="container min-vh-100 d-flex flex-column justify-content-center text-white bg-dark">
-          <Header />
-          <Search className="w-5 h-5 text-secondary mb-4" />
-
+        <Header />
+          <Search className="w-5 h-5 text-secondary mb-4" style={{ marginLeft: '20px' }} />
           <div className="row">
             {/* Announcements */}
             <div className="col-sm-3">
             <Card 
-              title="Upcoming Speeches" 
+              title="Upcoming Speech" 
               image="/src/img/pres_nelson.webp"
               imgSize={{ width: "300px", height: "400px" }}>
               <p className="text-info fw-bold">President Russell M. Nelson</p>
@@ -105,8 +104,8 @@ export default function App() {
           </div>
 
           {/* Study Tools Section */}
+          <Card title="Study Tools">
           <div className="container text-left mt-4 pb-5">
-            <h2 className="fw text">Study Tools</h2>
             <div className="d-flex justify-content-center">
               <div className="card bg-dark text-white p-3 rounded shadow-lg" style={{ width: "90%" }}>
                 <div className="row text-center">
@@ -132,6 +131,7 @@ export default function App() {
               </div>
             </div>
           </div>
+          </Card>
           
         </div>
       </div>
