@@ -6,8 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "../components/Layout";
 import HomePage from "./HomePage";
 
-
-
 export default function App() {
   return (
     <Layout> 
@@ -15,10 +13,9 @@ export default function App() {
       <div className="container min-vh-100 d-flex flex-column justify-content-center text-white bg-dark">
         <Header />
         <HomePage />
+        <CalendarPage />
       </div>
-    </div>
-      
+    </div> 
     </Layout>
   );
 }
-
