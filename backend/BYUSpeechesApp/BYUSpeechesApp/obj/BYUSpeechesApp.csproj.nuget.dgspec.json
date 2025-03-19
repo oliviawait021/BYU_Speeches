@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\early\\Downloads\\SQLQFMM4_Code Samples\\MySQL\\SQLScripts\\IS 413\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj": {}
+    "/Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\early\\Downloads\\SQLQFMM4_Code Samples\\MySQL\\SQLScripts\\IS 413\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj": {
+    "/Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\early\\Downloads\\SQLQFMM4_Code Samples\\MySQL\\SQLScripts\\IS 413\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj",
+        "projectUniqueName": "/Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj",
         "projectName": "BYUSpeechesApp",
-        "projectPath": "C:\\Users\\early\\Downloads\\SQLQFMM4_Code Samples\\MySQL\\SQLScripts\\IS 413\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj",
-        "packagesPath": "C:\\Users\\early\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\early\\Downloads\\SQLQFMM4_Code Samples\\MySQL\\SQLScripts\\IS 413\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\obj\\",
+        "projectPath": "/Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj",
+        "packagesPath": "/Users/oliviafowler/.nuget/packages/",
+        "outputPath": "/Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\early\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/oliviafowler/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -74,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
