@@ -3,13 +3,18 @@ import { FaBell, FaBellSlash } from "react-icons/fa";
 
 interface EventPopupProps {
   date: Date;
-  events: { date: number; speaker: string }[];
+  events: { date: Date; speaker: string }[]; // ✅ Using Date here
   onClose: () => void;
 }
 
 const EventPopup: React.FC<EventPopupProps> = ({ date, events, onClose }) => {
-  const day = date.getDate();
-  const dayEvents = events.filter((e) => e.date === day);
+  const dayEvents = events.filter((event) => {
+    return (
+      event.date.getFullYear() === date.getFullYear() &&
+      event.date.getMonth() === date.getMonth() &&
+      event.date.getDate() === date.getDate()
+    );
+  });
 
   return (
     <div style={styles.popup}>
