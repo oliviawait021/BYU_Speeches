@@ -18,7 +18,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-html, body {
+html, body, #root {
   background-color: black !important;
   height: 100%;
   margin: 0;
