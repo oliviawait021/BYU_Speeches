@@ -30,3 +30,4 @@
 /Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/obj/Debug/net8.0/BYUSpeechesApp.pdb
 /Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/obj/Debug/net8.0/BYUSpeechesApp.genruntimeconfig.cache
 /Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/obj/Debug/net8.0/ref/BYUSpeechesApp.dll
+/Users/oliviafowler/RiderProjects/BYUSpeechesApp/backend/BYUSpeechesApp/BYUSpeechesApp/obj/Debug/net8.0/BYUSpeechesApp.sourcelink.json
