@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css"; // You can still import their base if you want
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "react-calendar/dist/Calendar.css";
+import "../src/css/calendar.css";
 
 interface MultiMonthCalendarProps {
   onDateClick: (date: Date) => void;
@@ -38,43 +40,44 @@ const MultiMonthCalendar: React.FC<MultiMonthCalendarProps> = ({
   }, [year]);
 
   return (
-    <div className="scroll-container">
-      {monthsToShow.map((monthDate, idx) => (
-        <div
-          key={idx}
-          ref={(el) => {
-            if (el) monthRefs.current[idx] = el;
-          }}
-          className="month-container"
-        >
-          <h3 className="month-label">
-            {monthDate.toLocaleString("default", { month: "long" })}
-          </h3>
-
-          <Calendar
-            value={monthDate}
-            defaultView="month"
-            showNavigation={false}
-            tileDisabled={() => false}
-            onClickDay={(date) => onDateClick(date)}
-            tileContent={({ date, view }) => {
-              if (view === "month") {
-                const hasEvent = events.some(
-                  (event) =>
-                    event.date.getFullYear() === date.getFullYear() &&
-                    event.date.getMonth() === date.getMonth() &&
-                    event.date.getDate() === date.getDate()
-                );
-                return hasEvent ? (
-                  <div className="event-indicator"></div>
-                ) : null;
-              }
-              return null;
+    <>
+      <div className="scroll-container">
+        {monthsToShow.map((monthDate, idx) => (
+          <div
+            key={idx}
+            ref={(el) => {
+              if (el) monthRefs.current[idx] = el;
             }}
-          />
-        </div>
-      ))}
-    </div>
+            className="month-container"
+          >
+            <h3 className="month-label">
+              {monthDate.toLocaleString("default", { month: "long" })}
+            </h3>
+
+            <Calendar
+              value={monthDate}
+              defaultView="month"
+              showNavigation={false}
+              onClickDay={(date) => onDateClick(date)}
+              tileContent={({ date, view }) => {
+                if (view === "month") {
+                  const hasEvent = events.some(
+                    (event) =>
+                      event.date.getFullYear() === date.getFullYear() &&
+                      event.date.getMonth() === date.getMonth() &&
+                      event.date.getDate() === date.getDate()
+                  );
+                  return hasEvent ? (
+                    <div className="event-indicator"></div>
+                  ) : null;
+                }
+                return null;
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

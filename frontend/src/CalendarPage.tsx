@@ -71,7 +71,13 @@ const CalendarPage: React.FC = () => {
         </button>
       </div>
 
-      <CalendarView onDateClick={handleDateClick} year={year} events={events} />
+      <div className="calendar-wrapper">
+        <CalendarView
+          onDateClick={handleDateClick}
+          year={year}
+          events={events}
+        />
+      </div>
 
       {selectedDate && (
         <EventPopup

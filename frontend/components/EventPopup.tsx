@@ -1,9 +1,9 @@
 import React from "react";
-import { FaBell, FaBellSlash } from "react-icons/fa";
+import { X } from "lucide-react"; // for the red X icon
 
 interface EventPopupProps {
   date: Date;
-  events: { date: Date; speaker: string }[]; // ✅ Using Date here
+  events: { date: Date; speaker: string; time: string }[];
   onClose: () => void;
 }
 
@@ -17,45 +17,27 @@ const EventPopup: React.FC<EventPopupProps> = ({ date, events, onClose }) => {
   });
 
   return (
-    <div style={styles.popup}>
-      <h3>Events for {date.toDateString()}</h3>
+    <div className="popup-overlay">
+      <div className="popup-slide-up">
+        <button className="close-button" onClick={onClose}>
+          <X size={20} />
+        </button>
 
-      {dayEvents.length > 0 ? (
-        dayEvents.map((event, idx) => (
-          <div key={idx} style={styles.event}>
-            <span>{event.speaker}</span>
-            <FaBell style={styles.icon} />
-          </div>
-        ))
-      ) : (
-        <p>No events for this day.</p>
-      )}
+        <h3 className="popup-title">Events for {date.toDateString()}</h3>
 
-      <button onClick={onClose}>Close</button>
+        {dayEvents.length > 0 ? (
+          dayEvents.map((event, idx) => (
+            <div key={idx} className="popup-event">
+              <p className="popup-speaker">{event.speaker}</p>
+              <p className="popup-time">{event.time}</p>
+            </div>
+          ))
+        ) : (
+          <p className="popup-no-events">No events for this day.</p>
+        )}
+      </div>
     </div>
   );
-};
-
-const styles: { [key: string]: React.CSSProperties } = {
-  popup: {
-    position: "fixed",
-    bottom: "60px",
-    right: "10px",
-    backgroundColor: "#eee",
-    padding: "20px",
-    borderRadius: "10px",
-    width: "80%",
-    maxWidth: "300px",
-    zIndex: 1000,
-  },
-  event: {
-    display: "flex",
-    justifyContent: "space-between",
-    margin: "10px 0",
-  },
-  icon: {
-    cursor: "pointer",
-  },
 };
 
 export default EventPopup;

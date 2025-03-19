@@ -187,15 +187,13 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Calendar Component */}
-                  <CalendarPage />
                 </div>
               </Card>
             </div>
           </div>
         </div>
       </div>
+      <CalendarPage />
     </Layout>
   );
 }
