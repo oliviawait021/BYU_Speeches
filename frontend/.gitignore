@@ -25,3 +25,4 @@ dist-ssr
 # Ignore build and cache files
 backend/BYUSpeechesApp/BYUSpeechesApp/obj/
 backend/BYUSpeechesApp/BYUSpeechesApp/bin/
+backend/BYUSpeechesApp/BYUSpeechesApp/obj/
