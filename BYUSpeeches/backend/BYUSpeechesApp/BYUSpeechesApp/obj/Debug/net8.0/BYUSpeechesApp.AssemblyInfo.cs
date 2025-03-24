@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BYUSpeechesApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60a8aa30eff8a89da99b4abc4620c22ff8684e8a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbd3788bead3c0c064c65b51ac84de22c1c27819")]
 [assembly: System.Reflection.AssemblyProductAttribute("BYUSpeechesApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BYUSpeechesApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
