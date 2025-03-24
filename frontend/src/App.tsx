@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "./Header";
 import CalendarPage from "./CalendarPage";
 import HomePage from "./HomePage";
