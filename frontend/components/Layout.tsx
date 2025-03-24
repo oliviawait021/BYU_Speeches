@@ -1,12 +1,17 @@
 import React from "react";
 import Navbar from "./Navbar";
 
+type LayoutProps = {
+  children: React.ReactNode;
+  setCurrentView: (view: string) => void;
+  onSearch: (query: string) => void;
+};
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children, setCurrentView, onSearch }: LayoutProps) => {
   return (
-    <div className="container">
-      <main>{children}</main>
-      <Navbar />
+    <div style={{ paddingBottom: "60px" }}>
+      {children}
+      <Navbar setCurrentView={setCurrentView} onSearch={onSearch} />
     </div>
   );
 };
