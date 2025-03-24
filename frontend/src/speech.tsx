@@ -1,136 +1,86 @@
-"use client";
-import * as React from "react";
-import styles from "./speech.module.css";
+import React from "react";
+import "./speech.css";
+import { FaStickyNote, FaVolumeUp } from "react-icons/fa";
 
-interface StatusBarProps {
-  time?: string;
-}
-
-function StatusBar({ time = "9:41" }: StatusBarProps) {
+const BYUSpeech: React.FC = () => {
   return (
-    <header className={styles.statusBarIPhone}>
-      <div className={styles.frame}>
-        <time className={styles.time}>{time}</time>
-        <div className={styles.dynamicIslandspacer} />
-        <div className={styles.levels}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/2daff01164d1f56f28b0d1cd21000ea5c0857de85b1f08ac1c20b2912a0e0d43?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-            className={styles.img}
-            alt="Signal strength"
-          />
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d31bae4bf4ff46ccfafffa13bf606a831715bfe78ce5f06bcdc93ec85bd033b?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-            className={styles.img2}
-            alt="Battery level"
-          />
-        </div>
-      </div>
-    </header>
-  );
-}
+    <div className="speech-container">
+      {/* Page Title (Left-aligned and smaller) */}
+      <h1 className="page-title">BYU Speech</h1>
+      <br />
 
-function ContentSection() {
-  return (
-    <section className={styles.div}>
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/f3ec826cdfe938a92c5cfbf2c2e786f2752d9d8914de3df9c11a2cf5c5c4896d?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-        className={styles.img3}
-        alt="App logo"
-      />
-
-      <div className={styles.div2}>
-        <div className={styles.div3}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/260f5fbbfecd696226ef330e2b4b8c88e4e3679213637e0ba48c82cfec7557d9?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-            className={styles.img4}
-            alt="Profile avatar"
-          />
-          <h2 className={styles.speechName}>Speech Name</h2>
-        </div>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/53d332cece25f01d40ccb5c5cac8924429f76644e303679539ec9f1b27866256?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-          className={styles.img5}
-          alt="Action icon"
-        />
+      {/* Speech Title and Speaker (Centered) */}
+      <div className="speech-header">
+        <h2 className="speech-title">Peacemakers Needed</h2>
+        <h3 className="speaker-name">President Russell M. Nelson</h3>
       </div>
 
-      <div className={styles.div4}>
-        <article className={styles.speech}>
-          Speech
-          .......................................................................................................................................................................................................................................................................................................................................................................................................................................................
-        </article>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/16cbc9d14a816c487d4702bd1444032d53182bb233c22937e17479a5e4d71fb0?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-          className={styles.img6}
-          alt="Control button"
-        />
+      {/* Highlighted Text (Under Speech Title) */}
+      <p className="highlighted-text">
+        "You have your agency to choose contention or reconciliation. I urge you
+        to choose to be a peacemaker, now and always."
+      </p>
+
+      {/* Video (Centered) and Icons (Lined Vertically) */}
+      <div className="video-section">
+        <iframe
+          className="speech-video"
+          src="https://www.youtube.com/embed/vQghSMOOYz4"
+          title="BYU Speech Video"
+          allowFullScreen
+        ></iframe>
+
+        <div className="icons">
+          <button className="icon-button" aria-label="Replay Audio">
+            <FaVolumeUp size={24} />
+          </button>
+          <button className="icon-button" aria-label="Open Notes">
+            <FaStickyNote size={24} />
+          </button>
+        </div>
       </div>
-    </section>
-  );
-}
 
-function ControlsSection() {
-  return (
-    <>
-      <hr className={styles.div5} />
-      <nav className={styles.div6}>
-        <div className={styles.div7}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0426cc61-3f6a-4df9-bb86-a68e337ac956?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-            className={styles.img7}
-            alt="Thumbnail"
-          />
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7477a0a7b164429a4ce70b0f05cb411af464cef3716eae98f052b3df0d941a15?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-            className={styles.img8}
-            alt="Play button"
-          />
-        </div>
-        <div className={styles.div8}>
-          <button>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a1cb0851b0ca238d3bed6ff84f19b8dc8f129879bdf10ace9b095a3e49d39027?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-              className={styles.img9}
-              alt="Control button 1"
-            />
-          </button>
-          <button>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/877c42f4cb4413f92caa8795e8cdd65c4a1463c35afff7d03484527be0ce091f?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-              className={styles.img10}
-              alt="Control button 2"
-            />
-          </button>
-          <button>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/781b8bdf78fd4c263bfb950f494b8c9bff65ec89dd64cb823f86aa3b2cf77192?placeholderIfAbsent=true&apiKey=c49673c893e245259b271834306258ba"
-              className={styles.img11}
-              alt="Control button 3"
-            />
-          </button>
-        </div>
-      </nav>
-    </>
+      {/* Full Speech Script */}
+      <div className="speech-script">
+        <h4 className="script-title">Full Script:</h4>
+        <p>
+          My dear brothers and sisters, it is a joy to be with you. During these
+          past six months, you have been constantly on my mind and in my
+          prayers. I pray that the Holy Ghost will communicate what the Lord
+          wants you to hear as I speak to you now. During my surgical internship
+          many years ago, I assisted a surgeon who was amputating a leg filled
+          with highly infectious gangrene. The operation was difficult. Then, to
+          add to the tension, one of the team performed a task poorly, and the
+          surgeon erupted in anger. In the middle of his tantrum, he threw his
+          scalpel loaded with germs. It landed in my forearm! Everyone in the
+          operating room—except the out-of-control surgeon—was horrified by this
+          dangerous breach of surgical practice. Gratefully, I did not become
+          infected. But this experience left a lasting impression on me. In that
+          very hour, I promised myself that whatever happened in my operating
+          room, I would never lose control of my emotions. I also vowed that day
+          never to throw anything in anger—whether it be scalpels or words. Even
+          now, decades later, I find myself wondering if the contaminated
+          scalpel that landed in my arm was any more toxic than the venomous
+          contention that infects our civic dialogue and too many personal
+          relationships today. Civility and decency seem to have disappeared
+          during this era of polarization and passionate disagreements.
+          Vulgarity, faultfinding, and evil speaking of others are all too
+          common. Too many pundits, politicians, entertainers, and other
+          influencers throw insults constantly. I am greatly concerned that so
+          many people seem to believe that it is completely acceptable to
+          condemn, malign, and vilify anyone who does not agree with them. Many
+          seem eager to damage another’s reputation with pathetic and pithy
+          barbs! Anger never persuades. Hostility builds no one. Contention
+          never leads to inspired solutions. Regrettably, we sometimes see
+          contentious behavior even within our own ranks. We hear of those who
+          belittle their spouses and children, of those who use angry outbursts
+          to control others, and of those who punish family members with the
+          “silent treatment.” We hear of youth and children who bully and of
+          employees who defame their colleagues...
+        </p>
+      </div>
+    </div>
   );
-}
+};
 
-function IPhone() {
-  return (
-    <main className={styles.iPhone}>
-      <StatusBar />
-      <ContentSection />
-      <ControlsSection />
-    </main>
-  );
-}
-
-function App() {
-  return (
-    <>
-      <StatusBar />
-      <ContentSection />
-      <ControlsSection />
-      <IPhone />
-    </>
-  );
-}
+export default BYUSpeech;
