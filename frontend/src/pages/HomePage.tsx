@@ -13,28 +13,31 @@ export default function HomePage() {
         <div className="flex justify-center items-center h-screen w-full text-white" style={{ backgroundColor: "#111827" }}>
         <div className="container min-vh-100 d-flex flex-column justify-content-center text-white" style={{ backgroundColor: "#111827" }}>
           <Header />
-          <Search className="w-5 h-5 text-secondary mb-4" style={{ marginLeft: '20px' }} />
           <div className="row">
             {/* Announcements */}
             <div className="col-sm-3">
             <Card 
               title="Upcoming Speech" onTitleClick={() => navigate("/calendar")} 
-              image="/src/img/pres_nelson.webp"
-              imgSize={{ width: "300px", height: "400px" }}>
-              <p style={{ color: "#5dade2", fontWeight: "bold" }}>President Russell M. Nelson</p>              <p className="text font-grey">March 18, 2025</p>
+              image="https://speeches.byu.edu/wp-content/uploads/2024/12/Horwitz_Ilana_M_Web_2025.webp"
+              imgSize={{ width: "300px", height: "320px" }}>
+              <p style={{ color: "#5dade2", fontWeight: "bold", fontSize: "1rem" }}>Ilana M. Horwitz</p>
+              <p style={{ fontSize: "0.75rem" }}><em>Assistant Professor of Jewish Studies and Sociology at Tulane University</em></p>              <p className="text font-grey">March 25, 2025</p>
               </Card>
             </div>
 
             {/* Quote of the Day */}
             <div className="col-sm-3">
               <Card title="Quote of the Day" onTitleClick={() => navigate("/speech")}>
-              <p style={{ color: "#5dade2", fontWeight: "" }}>Quote</p>
-              <p style={{ color: "#5dade2", fontWeight: "bold" }}>David O. Mckay</p>
+              <p style={{ color: "#5dade2", fontWeight: "" }}><em>Heartbreak means you’re a step closer to finding true love. Struggles in school mean you’re 
+                                                              learning new skills. Being low on funds means you’re learning how to budget and will be thankful 
+                                                              and humble when more compensation arrives. God will provide. And good times are ahead.</em></p>
+              <p style={{ color: "#5dade2", fontWeight: "bold" }}>Kalani Sitake, head football coach at BYU</p>
+              <p style={{ color: "#5dade2", fontWeight: "bold" }}>March 11, 2025</p>
               </Card>
             </div>
 
             {/* Browse Topics Carousel */}
-            <Card title="Browse more Topics" onTitleClick={() => navigate("/topics")}>            <div id="topicsCarousel" className="carousel slide" data-bs-ride="carousel">
+            <Card title="Browse Topics" onTitleClick={() => navigate("/topics")}>            <div id="topicsCarousel" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner pt-5">
                 <div className="carousel-item active ">
                   <Card title="Jesus Christ" image="/src/img/jesus.webp" imgSize={{ width: "200px", height: "220px" }} />
