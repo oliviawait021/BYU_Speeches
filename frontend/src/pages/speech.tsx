@@ -1,5 +1,5 @@
 import React from "react";
-import "./speech.css";
+import "../css/speech.css";
 import { FaStickyNote, FaVolumeUp } from "react-icons/fa";
 
 const BYUSpeech: React.FC = () => {

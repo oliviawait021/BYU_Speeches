@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Calendar from "react-calendar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "react-calendar/dist/Calendar.css";
-import "../src/css/calendar.css";
+import "../css/calendar.css";
 
 interface MultiMonthCalendarProps {
   onDateClick: (date: Date) => void;

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import CalendarView from "../components/Calendar";
 import EventPopup from "../components/EventPopup";
+import '../css/calendar.css'
 
 const CalendarPage: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
