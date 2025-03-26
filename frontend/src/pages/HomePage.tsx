@@ -1,8 +1,6 @@
-import { Search, Menu } from "lucide-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "../components/Card";
 import Header from "../components/Header";
-import Layout from "../components/Layout";
 import { useNavigate } from "react-router-dom";
 
 

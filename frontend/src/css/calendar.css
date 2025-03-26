@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  background-color: #343a40;
+  background-color: #111827;
   padding: 20px;
 }
 
@@ -59,20 +59,19 @@ body {
 
 /* Calendar Styles */
 .react-calendar {
-  background-color: #1e1e1e !important;
+  background-color: #434343 !important;
   color: #ffffff !important;
   border: none;
   border-radius: 10px;
   width: 100%;
   max-width: 100px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .react-calendar__month-view__weekdays {
   text-transform: uppercase;
   color: #bbbbbb;
   font-weight: normal;
-  background-color: #1e1e1e;
+  background-color: #434343;
 }
 
 .react-calendar__month-view__weekdays__weekday {
@@ -81,9 +80,9 @@ body {
 
 /* Day tiles */
 .react-calendar__tile {
-  background-color: #1e1e1e !important;
+  background-color: #434343 !important;
   color: #ffffff !important;
-  border: 1px solid #333333;
+  border: 1px solid #434343;
   position: relative;
   transition:
     background-color 0.2s,
@@ -92,7 +91,7 @@ body {
 }
 
 .react-calendar__tile:hover {
-  background-color: #333333 !important;
+  background-color: #434343 !important;
 }
 
 .react-calendar__tile--now {
@@ -107,18 +106,6 @@ body {
 
 .react-calendar__month-view__days__day--neighboringMonth {
   color: #777777 !important; /* Gray for neighboring months */
-}
-
-/* Event Indicators */
-.event-indicator {
-  width: 6px;
-  height: 6px;
-  background-color: #5dade2; /* Light blue dot */
-  border-radius: 50%;
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* Month Header */
@@ -140,11 +127,11 @@ body {
 }
 
 .month-container {
-  border: 1px solid #333333;
+  border: 1px solid #434343;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  background: #1e1e1e;
+  background: #434343;
 }
 
 /* Event Popup Styles */
@@ -152,7 +139,7 @@ body {
   position: fixed;
   bottom: 60px;
   right: 10px;
-  background-color: #1e1e1e;
+  background-color: #434343;
   color: #ffffff;
   padding: 20px;
   border-radius: 10px;
@@ -315,4 +302,12 @@ body {
     top: 10px;
     right: 15px;
   }
+}
+
+.tuesday-highlight {
+  background-color: #5dade2;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
 }
