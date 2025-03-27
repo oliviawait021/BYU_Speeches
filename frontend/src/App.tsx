@@ -1,31 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CalendarPage from "./pages/CalendarPage";
 import HomePage from "./pages/HomePage";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import BYUSpeech from "./pages/speech";
 import Topics from "./pages/Topics";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Speech } from "./types/Speeches";
 
 export default function App() {
-  const [currentView, setCurrentView] = useState("home");
   const [searchQuery, setSearchQuery] = useState("");
+  const [speeches, setSpeeches] = useState<Speech[]>([]);
 
+  useEffect(() => {
+    const fetchSpeeches = async () => {
+      try {
+        const response = await fetch("http://localhost:5276/speeches");
+        if (!response.ok) throw new Error("Failed to fetch speeches");
+        const data = await response.json();
+        setSpeeches(data);
+      } catch (error) {
+        console.error("Error fetching speeches:", error);
+      }
+    };
+
+    fetchSpeeches();
+  }, []);
+
+  /*
+  const [currentView, setCurrentView] = useState("home");
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
     setCurrentView("search");
-  };
+  */
 
   return (
     <Router>
       <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/calendar"} element={<CalendarPage />} />
-        <Route path={"/speech"} element={<BYUSpeech />} />
-        <Route path={"/topic"} element={<Topics />} />
-        <Route path={'/search'} element={<div>search!</div>} />
-        <Route path={"/profile"} element={<div>profile!</div>} />
-        <Route  path={"/login"} element={<div>login!</div>} />
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/calendar"
+          element={<CalendarPage speeches={speeches} />}
+        />
+        <Route path="/speech" element={<BYUSpeech />} />
+        <Route path="/topic" element={<Topics />} />
+        <Route path="/search" element={<div>search!</div>} />
+        <Route path="/profile" element={<div>profile!</div>} />
+        <Route path="/login" element={<div>login!</div>} />
       </Routes>
     </Router>
   );
