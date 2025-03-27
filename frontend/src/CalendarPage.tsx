@@ -1,7 +1,8 @@
 // CalendarPage.tsx
 import React, { useState, useEffect } from "react";
-import CalendarView from "../components/Calendar";
-import EventPopup from "../components/EventPopup";
+import Calendar from "../src/components/Calendar";
+import EventPopup from "../src/components/EventPopup";
+import Header from "../src/components/Header";
 
 const CalendarPage: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -58,35 +59,32 @@ const CalendarPage: React.FC = () => {
   const handleNextYear = () => setYear((prev) => prev + 1);
 
   return (
-    <div className="page-container">
-      <h2 className="title">BYU Speeches Calendar</h2>
+    <>
+      <Header />
+      <div className="page-container">
+        <div className="year-toggle">
+          <button onClick={handlePrevYear} className="year-button">
+            ◀
+          </button>
+          <h2 className="year-label">{year}</h2>
+          <button onClick={handleNextYear} className="year-button">
+            ▶
+          </button>
+        </div>
 
-      <div className="year-toggle">
-        <button onClick={handlePrevYear} className="year-button">
-          ◀
-        </button>
-        <h2 className="year-label">{year}</h2>
-        <button onClick={handleNextYear} className="year-button">
-          ▶
-        </button>
+        <div className="calendar-wrapper">
+          <Calendar onDateClick={handleDateClick} year={year} events={events} />
+        </div>
+
+        {selectedDate && (
+          <EventPopup
+            date={selectedDate}
+            events={events}
+            onClose={() => setSelectedDate(null)}
+          />
+        )}
       </div>
-
-      <div className="calendar-wrapper">
-        <CalendarView
-          onDateClick={handleDateClick}
-          year={year}
-          events={events}
-        />
-      </div>
-
-      {selectedDate && (
-        <EventPopup
-          date={selectedDate}
-          events={events}
-          onClose={() => setSelectedDate(null)}
-        />
-      )}
-    </div>
+    </>
   );
 };
 

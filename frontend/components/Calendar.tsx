@@ -58,20 +58,15 @@ const MultiMonthCalendar: React.FC<MultiMonthCalendarProps> = ({
               value={monthDate}
               defaultView="month"
               showNavigation={false}
+              tileDisabled={() => false}
               onClickDay={(date) => onDateClick(date)}
-              tileContent={({ date, view }) => {
-                if (view === "month") {
-                  const hasEvent = events.some(
-                    (event) =>
-                      event.date.getFullYear() === date.getFullYear() &&
-                      event.date.getMonth() === date.getMonth() &&
-                      event.date.getDate() === date.getDate()
-                  );
-                  return hasEvent ? (
-                    <div className="event-indicator"></div>
-                  ) : null;
-                }
-                return null;
+              tileClassName={({ date }) => {
+                const isTuesday = date.getDay() === 2;
+                const isFirst = date.getDate() === 1;
+                const isCurrentYear = date.getFullYear() === year;
+                return isTuesday && !isFirst && isCurrentYear
+                  ? "tuesday-highlight"
+                  : null;
               }}
             />
           </div>

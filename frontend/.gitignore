@@ -27,6 +27,6 @@ backend/BYUSpeechesApp/BYUSpeechesApp/obj/
 backend/BYUSpeechesApp/BYUSpeechesApp/bin/
 
 
-build
 .env
 .env.local
+
