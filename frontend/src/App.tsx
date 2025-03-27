@@ -1,26 +1,13 @@
 import { useState } from "react";
-import Header from "./Header";
-import CalendarPage from "./CalendarPage";
-import HomePage from "./HomePage";
-import SearchPage from "../components/SearchPage";
-import Layout from "../components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import BYUSpeech from "./pages/speech";
+import Topics from "./pages/Topics";
 
 export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const renderView = () => {
-    switch (currentView) {
-      case "calendar":
-        return <CalendarPage />;
-      case "search":
-        return <SearchPage query={searchQuery} />;
-      case "home":
-      default:
-        return <HomePage />;
-    }
-  };
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -28,13 +15,16 @@ export default function App() {
   };
 
   return (
-    <Layout setCurrentView={setCurrentView} onSearch={handleSearch}>
-      <div className="flex justify-center items-center h-screen w-full bg-gray-1000 text-white">
-        <div className="container min-vh-100 d-flex flex-column justify-content-center text-white bg-dark">
-          <Header />
-          {renderView()}
-        </div>
-      </div>
-    </Layout>
+    <Router>
+      <Routes>
+        <Route path={"/"} element={<HomePage />} />
+        <Route path={"/calendar"} element={<CalendarPage />} />
+        <Route path={"/speech"} element={<BYUSpeech />} />
+        <Route path={"/topic"} element={<Topics />} />
+        <Route path={'/search'} element={<div>search!</div>} />
+        <Route path={"/profile"} element={<div>profile!</div>} />
+        <Route  path={"/login"} element={<div>login!</div>} />
+      </Routes>
+    </Router>
   );
 }

@@ -1,6 +1,0 @@
-@BYUSpeechesApp_HostAddress = http://localhost:5276
-
-GET {{BYUSpeechesApp_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

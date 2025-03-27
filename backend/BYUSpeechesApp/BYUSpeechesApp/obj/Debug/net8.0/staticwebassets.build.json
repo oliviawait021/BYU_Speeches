@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "LQ+ToeNL/KXoCnlSt4U9lwvsE1WemLlYP6TzCG1f+nc=",
+  "Hash": "opei8i+9rYI2MJT3k5v7L1y6drsw+WvOR96/xvcgRyI=",
   "Source": "BYUSpeechesApp",
   "BasePath": "_content/BYUSpeechesApp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

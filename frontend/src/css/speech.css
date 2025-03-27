@@ -1,0 +1,176 @@
+/* Speech Page Container */
+.speech-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center everything horizontally */
+  justify-content: flex-start; /* Align content from the top */
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #111827; /* Dark background */
+  color: #ffffff; /* White text */
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Include padding in the box model */
+}
+
+/* Page Title (Left-aligned, Smallest, and Bold) */
+.page-title {
+  align-self: flex-start; /* Align left */
+  text-align: left; /* Left align text */
+  font-size: 1.25rem; /* Smaller than speech title and speaker */
+  font-weight: bold; /* Bold */
+  margin-bottom: 1rem; /* Space under the page title */
+}
+
+/* Speech Header (Centered, Bigger Font Sizes, and Bold) */
+.speech-header {
+  text-align: center; /* Center title and speaker */
+  margin: 2rem 0; /* Add vertical spacing */
+}
+
+.speech-title {
+  font-size: 3rem; /* Largest text */
+  font-weight: bold; /* Bold */
+  margin: 0.5rem 0; /* Space around the title */
+}
+
+.speaker-name {
+  font-size: 1.5rem; /* Second biggest */
+  font-weight: bold; /* Bold */
+  margin: 0;
+}
+
+/* Highlighted Text (Under Speech Title, Centered) */
+.highlighted-text {
+  font-size: 1.25rem; /* Slightly larger text */
+  color: #5dade2; /* Light blue highlight */
+  margin: 1.5rem; /* 1.5rem top/bottom, 2rem left/right */
+  text-align: center;
+  font-style: italic;
+}
+
+/* Video Section (Centered and Responsive) */
+.video-section {
+  display: flex;
+  flex-direction: column; /* Stack video and icons vertically */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  gap: 1.5rem; /* Space between video and icons */
+  margin: 2rem; /* Space around the video section */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Embedded Video (Responsive) */
+.speech-video {
+  width: 100%; /* Full width on small screens */
+  max-width: 900px; /* Limit width on larger screens */
+  aspect-ratio: 16 / 9; /* Maintain video aspect ratio */
+  border: none; /* Remove border */
+}
+
+/* Icons - Vertically on PC, Horizontally on Mobile */
+.icons {
+  display: flex;
+  flex-direction: row; /* Always horizontal */
+  gap: 1rem; /* Space between icons */
+  margin-top: 1rem; /* Space above icons */
+}
+
+/* Icon Button Styling */
+.icon-button {
+  background: none;
+  border: none;
+  color: #5dade2; /* Light blue */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-button:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Speech Script Section */
+.speech-script {
+  width: 100%; /* Full width on small screens */
+  max-width: 800px; /* Limit width on larger screens */
+  margin-top: 2rem; /* Space above script box */
+  padding: 1.5rem;
+  border: 1px solid #5dade2; /* Light blue border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #1e1e1e; /* Darker box */
+  text-align: left; /* Left-aligned text */
+  box-sizing: border-box; /* Ensure padding is included */
+}
+
+/* Script Title ("Full Script:" Bolded) */
+.script-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem; /* Space below script title */
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets and smaller PCs) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .speech-title {
+    font-size: 2.5rem; /* Slightly smaller on tablets */
+  }
+
+  .speaker-name {
+    font-size: 2rem; /* Adjust speaker size */
+  }
+
+  .speech-script {
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .speech-video {
+    width: 600px; /* Bigger video on tablets (iPad) */
+  }
+}
+
+/* Large Screens (PCs and Desktops) */
+@media (min-width: 1025px) {
+  .speech-video {
+    width: 600px; /* Larger video on desktops */
+  }
+}
+
+/* Small Screens (iPhone and similar devices) */
+@media (max-width: 480px) {
+  /* Adjust page elements for small screens */
+  .page-title {
+    font-size: 1rem; /* Smaller page title */
+  }
+
+  .speech-title {
+    font-size: 2rem; /* Smaller speech title */
+  }
+
+  .speaker-name {
+    font-size: 1.5rem; /* Smaller speaker name */
+  }
+
+  .highlighted-text {
+    font-size: 1rem; /* Adjust highlight size */
+  }
+
+  .speech-script {
+    padding: 1rem; /* Adjust padding */
+  }
+
+  /* Make icons horizontal under the video */
+  .icons {
+    flex-direction: row; /* Change to horizontal */
+    justify-content: center; /* Center icons under the video */
+    gap: 0.75rem; /* Smaller gap between icons */
+    margin-top: 1rem; /* Space above the icons */
+  }
+
+  /* Prevent horizontal scrolling */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* different color - #0dcaf0 */
