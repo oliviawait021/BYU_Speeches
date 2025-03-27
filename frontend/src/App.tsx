@@ -1,6 +1,4 @@
 import { useState } from "react";
-import CalendarPage from "./pages/CalendarPage";
-import HomePage from "./pages/HomePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import BYUSpeech from "./pages/speech";
