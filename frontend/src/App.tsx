@@ -4,6 +4,8 @@ import CalendarPage from "./pages/CalendarPage";
 import HomePage from "./pages/HomePage";
 import BYUSpeech from "./pages/speech";
 import Topics from "./pages/Topics";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Speech } from "./types/Speeches";
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
