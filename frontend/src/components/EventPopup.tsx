@@ -1,18 +1,20 @@
 import React from "react";
-import { X } from "lucide-react"; // for the red X icon
+import { X } from "lucide-react";
+import { Speech } from "../types/Speeches";
 
 interface EventPopupProps {
   date: Date;
-  events: { date: Date; speaker: string; time: string }[];
+  events: Speech[];
   onClose: () => void;
 }
 
 const EventPopup: React.FC<EventPopupProps> = ({ date, events, onClose }) => {
   const dayEvents = events.filter((event) => {
+    const eventDate = new Date(event.ScheduleDate);
     return (
-      event.date.getFullYear() === date.getFullYear() &&
-      event.date.getMonth() === date.getMonth() &&
-      event.date.getDate() === date.getDate()
+      eventDate.getFullYear() === date.getFullYear() &&
+      eventDate.getMonth() === date.getMonth() &&
+      eventDate.getDate() === date.getDate()
     );
   });
 
@@ -25,16 +27,14 @@ const EventPopup: React.FC<EventPopupProps> = ({ date, events, onClose }) => {
 
         <h3 className="popup-title">Events for {date.toDateString()}</h3>
 
-        {dayEvents.length > 0 ? (
-          dayEvents.map((event, idx) => (
-            <div key={idx} className="popup-event">
-              <p className="popup-speaker">{event.speaker}</p>
-              <p className="popup-time">{event.time}</p>
-            </div>
-          ))
-        ) : (
-          <p className="popup-no-events">No events for this day.</p>
-        )}
+        {dayEvents.map((event, idx) => (
+          <div key={idx} className="popup-event">
+            <p className="popup-speaker">{event.Speaker}</p>
+            <p className="popup-title">{event.SpeechTitle}</p>
+            <p className="popup-time">{event.DurationOfSpeech} mins</p>
+            <p className="popup-topic">{event.Topic}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
