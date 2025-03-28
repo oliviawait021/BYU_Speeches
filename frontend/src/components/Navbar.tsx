@@ -1,5 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Home, Search, Grid, Calendar, User } from "lucide-react";
+import {
+  Home,
+  Search,
+  Grid,
+  Calendar,
+  User,
+  BookAIcon,
+  BookCopyIcon,
+  BookDashed,
+  BookIcon,
+} from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 type NavbarProps = {
@@ -105,6 +115,9 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         </div>
         <div onClick={() => navigate("/calendar")}>
           <Calendar color="white" size={28} />
+        </div>
+        <div onClick={() => navigate("/topic")}>
+          <BookIcon color="white" size={28} />
         </div>
         <div onClick={() => navigate("/login")}>
           <User color="white" size={28} />
