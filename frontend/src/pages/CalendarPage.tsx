@@ -13,7 +13,7 @@ const CalendarPage: React.FC<CalendarPageProps> = ({ speeches }) => {
   const [year, setYear] = useState(new Date().getFullYear());
 
   const events = speeches.filter(
-    (s) => new Date(s.ScheduleDate).getFullYear() === year
+    (s) => new Date(s.scheduleDate).getFullYear() === year
   );
 
   const handleDateClick = (date: Date) => {
@@ -29,13 +29,19 @@ const CalendarPage: React.FC<CalendarPageProps> = ({ speeches }) => {
   const handleNextYear = () => setYear((prev) => prev + 1);
 
   return (
-    <>
+    <div
+      style={{ backgroundColor: "#111827", minHeight: "100vh", color: "white" }}
+    >
       <Header />
       <div className="page-container">
         <div className="year-toggle">
-          <button onClick={handlePrevYear} className="year-button">◀</button>
+          <button onClick={handlePrevYear} className="year-button">
+            ◀
+          </button>
           <h2 className="year-label">{year}</h2>
-          <button onClick={handleNextYear} className="year-button">▶</button>
+          <button onClick={handleNextYear} className="year-button">
+            ▶
+          </button>
         </div>
 
         <div className="calendar-wrapper">
@@ -45,12 +51,12 @@ const CalendarPage: React.FC<CalendarPageProps> = ({ speeches }) => {
         {selectedDate && (
           <EventPopup
             date={selectedDate}
-            events={events}
+            events={speeches}
             onClose={() => setSelectedDate(null)}
           />
         )}
       </div>
-    </>
+    </div>
   );
 };
 

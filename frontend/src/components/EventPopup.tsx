@@ -9,14 +9,13 @@ interface EventPopupProps {
 }
 
 const EventPopup: React.FC<EventPopupProps> = ({ date, events, onClose }) => {
-  const dayEvents = events.filter((event) => {
-    const eventDate = new Date(event.ScheduleDate);
-    return (
-      eventDate.getFullYear() === date.getFullYear() &&
-      eventDate.getMonth() === date.getMonth() &&
-      eventDate.getDate() === date.getDate()
-    );
-  });
+  const formatDate = (date: Date): string => date.toISOString().split("T")[0];
+
+  const selectedDateString = formatDate(date);
+
+  const dayEvents = events.filter(
+    (event) => event.scheduleDate?.split("T")[0] === selectedDateString
+  );
 
   return (
     <div className="popup-overlay">
@@ -25,16 +24,21 @@ const EventPopup: React.FC<EventPopupProps> = ({ date, events, onClose }) => {
           <X size={20} />
         </button>
 
-        <h3 className="popup-title">Events for {date.toDateString()}</h3>
+        <h3 className="popup-title">Speeches for {date.toDateString()}</h3>
 
-        {dayEvents.map((event, idx) => (
-          <div key={idx} className="popup-event">
-            <p className="popup-speaker">{event.Speaker}</p>
-            <p className="popup-title">{event.SpeechTitle}</p>
-            <p className="popup-time">{event.DurationOfSpeech} mins</p>
-            <p className="popup-topic">{event.Topic}</p>
-          </div>
-        ))}
+        {dayEvents.length > 0 ? (
+          dayEvents.map((event, idx) => (
+            <div key={idx} className="popup-event">
+              <p className="popup-speaker">
+                <strong>{event.speaker}</strong>
+              </p>
+              <p className="popup-title">{event.speechTitle}</p>
+              <p className="popup-topic">Topic: {event.topic}</p>
+            </div>
+          ))
+        ) : (
+          <p className="popup-no-events">No speeches scheduled for this day.</p>
+        )}
       </div>
     </div>
   );

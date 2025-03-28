@@ -1,11 +1,11 @@
 export interface Speech {
-  SpeechId: number;
-  Speaker: string;
-  SpeakerBio: string;
-  SpeechTitle: string;
-  Topic: string;
-  DurationOfSpeech: number;
-  ScheduleDate: string;
-  DateSpeechGiven: string;
-  ImageURL: string;
+  speechId: number;
+  speaker: string;
+  speakerBio: string;
+  speechTitle: string;
+  topic: string;
+  durationOfSpeech: number;
+  scheduleDate: string;
+  dateSpeechGiven: string;
+  imageURL: string;
 }
