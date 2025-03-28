@@ -106,6 +106,9 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         <div onClick={() => navigate("/calendar")}>
           <Calendar color="white" size={28} />
         </div>
+        <div onClick={() => navigate("/topic")}>
+          <Grid color="white" size={28} />
+        </div>
         <div onClick={() => navigate("/login")}>
           <User color="white" size={28} />
         </div>

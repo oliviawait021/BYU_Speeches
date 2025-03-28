@@ -2857,23 +2857,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\early\\.nuget\\packages\\": {},
+    "C:\\Users\\chris\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\OneDrive\\Documents\\GitHub\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj",
       "projectName": "BYUSpeechesApp",
-      "projectPath": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj",
-      "packagesPath": "C:\\Users\\early\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\obj\\",
+      "projectPath": "C:\\Users\\chris\\OneDrive\\Documents\\GitHub\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\BYUSpeechesApp.csproj",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chris\\OneDrive\\Documents\\GitHub\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\early\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
