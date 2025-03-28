@@ -4,13 +4,12 @@ import { useEffect, useState } from 'react';
 
 function Topics () {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
-  const [speeches, setSpeeches] = useState<Speech[]>([]);
+  const [speeches, setSpeeches] = useState<BYUSpeech[]>([]);
 
-  const handleClick = async (topicName: string) => {
-    setSelectedTopic(topicName);
-  
+  const handleClick = async (topic: string) => {
+    setSelectedTopic(topic);
 
-    const response = await fetch(`https://localhost:5000/api/Speeches?topic=${encodeURIComponent(topicName)}`);
+    const response = await fetch(`https://localhost:5000/api/Speeches?topic=${encodeURIComponent(topic)}`);
     const data = await response.json();
     setSpeeches(data);
   };
@@ -55,7 +54,7 @@ return(
             <ul>
               {speeches.map((s) => (
                 <li key={s.speechId} onClick={() => window.location.href = `/speech/${s.speechId}`}>
-                  <strong>{s.title}</strong> by {s.speaker} ({s.date})
+                  <strong>{s.title}</strong> by {s.speaker} ({s.dateSpeechGiven})
                 </li>
 
               ))}
