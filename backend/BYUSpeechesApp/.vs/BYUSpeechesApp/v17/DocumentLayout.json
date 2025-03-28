@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{83DCFAC2-FFAF-4783-A975-E54C77181E97}|BYUSpeechesApp\\BYUSpeechesApp.csproj|c:\\users\\early\\source\\repos\\oliviawait021\\byu_speeches\\backend\\byuspeechesapp\\byuspeechesapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83DCFAC2-FFAF-4783-A975-E54C77181E97}|BYUSpeechesApp\\BYUSpeechesApp.csproj|solutionrelative:byuspeechesapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83DCFAC2-FFAF-4783-A975-E54C77181E97}|BYUSpeechesApp\\BYUSpeechesApp.csproj|c:\\users\\early\\source\\repos\\oliviawait021\\byu_speeches\\backend\\byuspeechesapp\\byuspeechesapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{83DCFAC2-FFAF-4783-A975-E54C77181E97}|BYUSpeechesApp\\BYUSpeechesApp.csproj|solutionrelative:byuspeechesapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83DCFAC2-FFAF-4783-A975-E54C77181E97}|BYUSpeechesApp\\BYUSpeechesApp.csproj|c:\\users\\early\\source\\repos\\oliviawait021\\byu_speeches\\backend\\byuspeechesapp\\byuspeechesapp\\controllers\\speechcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83DCFAC2-FFAF-4783-A975-E54C77181E97}|BYUSpeechesApp\\BYUSpeechesApp.csproj|solutionrelative:byuspeechesapp\\controllers\\speechcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\appsettings.json",
+              "RelativeDocumentMoniker": "BYUSpeechesApp\\appsettings.json",
+              "ToolTip": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\appsettings.json",
+              "RelativeToolTip": "BYUSpeechesApp\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-27T00:31:28.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\Program.cs",
+              "RelativeDocumentMoniker": "BYUSpeechesApp\\Program.cs",
+              "ToolTip": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\Program.cs",
+              "RelativeToolTip": "BYUSpeechesApp\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T00:31:21.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SpeechController.cs",
+              "DocumentMoniker": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\Controllers\\SpeechController.cs",
+              "RelativeDocumentMoniker": "BYUSpeechesApp\\Controllers\\SpeechController.cs",
+              "ToolTip": "C:\\Users\\early\\source\\repos\\oliviawait021\\BYU_Speeches\\backend\\BYUSpeechesApp\\BYUSpeechesApp\\Controllers\\SpeechController.cs",
+              "RelativeToolTip": "BYUSpeechesApp\\Controllers\\SpeechController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T23:44:56.211Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

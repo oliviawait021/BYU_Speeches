@@ -7,19 +7,21 @@ namespace BYUSpeechesApp.Controllers;
 [ApiController]
 public class SpeechController : ControllerBase
 {
-    private SpeechDbContext _speechContext;
-    
-    public SpeechController(SpeechDbContext temp)
+    private readonly SpeechDbContext _speechContext;
+
+    public SpeechController(SpeechDbContext context)
     {
-        _speechContext = temp;
+        _speechContext = context;
     }
-    
-    [HttpGet(Name = "GetSpeechInfo")]
-    public IEnumerable<SpeechInfo> Get()
+
+    // GET: api/speech
+    [HttpGet]
+    public IActionResult GetAllSpeeches()
     {
-        var speechList = _speechContext.SpeechInfos
+        var speeches = _speechContext.SpeechInfos
+            .OrderBy(s => s.ScheduleDate)
             .ToList();
 
-        return (speechList);
+        return Ok(speeches);
     }
 }
