@@ -1,207 +1,6 @@
-// import { useEffect, useState } from "react";
-// // import "../App.css";
-
-// function Topics() {
-//   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
-//   const [speeches, setSpeeches] = useState<any[]>([]); // Adjusted type to any[]
-//   const [loading, setLoading] = useState<boolean>(false); // Track loading state
-//   const [error, setError] = useState<string | null>(null); // Track errors
-
-//   useEffect(() => {
-//     setLoading(true);
-//     setError("");
-
-//     fetch("https://localhost:5276/Speech") // Fetches all speeches
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error(`HTTP error! Status: ${response.status}`);
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         console.log("Fetched speeches:", data); // Debugging
-//         setSpeeches(data);
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching speeches:", error);
-//         setError(error.message);
-//       })
-//       .finally(() => setLoading(false));
-//   }, []); // Runs once when the component mounts
-
-//   // Handles click on a topic
-//   const handleClick = async (topic: string) => {
-//     setSelectedTopic(topic); // Set selected topic
-//     setLoading(true); // Set loading state
-//     setError(null); // Reset error state
-
-//     useEffect(() => {
-//       setLoading(true);
-//       setError("");
-
-//       fetch("https://localhost:5276/Speech") // Fetches all speeches
-//         .then((response) => {
-//           if (!response.ok) {
-//             throw new Error(`HTTP error! Status: ${response.status}`);
-//           }
-//           return response.json();
-//         })
-//         .then((data) => {
-//           console.log("Fetched speeches:", data); // Debugging
-//           setSpeeches(data);
-//         })
-//         .catch((error) => {
-//           console.error("Error fetching speeches:", error);
-//           setError(error.message);
-//         })
-//         .finally(() => setLoading(false));
-//     }, []); // Runs once when the component mounts
-
-//     try {
-//       // Fetch speeches related to the selected topic
-//       const response = await fetch(
-//         `https://localhost:5276/Speech}`
-//         // ?topic=${encodeURIComponent(topic)
-//       );
-
-//       // Check if the response is successful
-//       // if (!response.ok) {
-//       //   throw new Error("Failed to fetch speeches.");
-//       // }
-
-//       const data = await response.json();
-
-//       // Check if data is an array, indicating we received the correct format
-//       if (Array.isArray(data)) {
-//         setSpeeches(data); // Set the speeches state with the fetched data
-//       } else {
-//         throw new Error("Invalid data format received.");
-//       }
-//     } catch (err) {
-//       setError("An error occurred while fetching speeches. Please try again."); // Set error message
-//     } finally {
-//       setLoading(false); // Reset loading state
-//     }
-//   };
-
-//   const filteredSpeeches = speeches.filter((s) =>
-//     s.topic.toLowerCase().includes(selectedTopic.toLowerCase())
-//   );
-
-//   return (
-//     <>
-//       <h1>Topics</h1>
-//       <div>
-//         <img
-//           height={200}
-//           src="/src/img/jesus.webp"
-//           alt="Jesus Christ"
-//           onClick={() => handleClick("Jesus")}
-//         />
-//         <p>Jesus Christ</p>
-
-//         <img
-//           height={200}
-//           src="/src/img/church_logo.png"
-//           alt="Core Beliefs"
-//           onClick={() => handleClick("Beliefs")}
-//         />
-//         <p>Core Beliefs</p>
-//         <img
-//           height={200}
-//           src="/src/img/faith.jpg"
-//           alt="Faith"
-//           onClick={() => handleClick("Faith")}
-//         />
-//         <p>Faith</p>
-
-//         <img
-//           height={200}
-//           src="/src/img/Repentance.png"
-//           alt="Repentance"
-//           onClick={() => handleClick("Repentance")}
-//         />
-//         <p>Repentance</p>
-
-//         <img
-//           height={200}
-//           src="/src/img/baptism.png"
-//           alt="Baptism"
-//           onClick={() => handleClick("Baptism")}
-//         />
-//         <p>Baptism</p>
-
-//         <img
-//           height={200}
-//           src="/src/img/washington_dc_temple.webp"
-//           alt="Temple"
-//           onClick={() => handleClick("Temple")}
-//         />
-//         <p>Temple</p>
-
-//         <img
-//           height={200}
-//           src="/src/img/jesus.webp"
-//           alt="Prayer"
-//           onClick={() => handleClick("Prayer")}
-//         />
-//         <p>Prayer</p>
-
-//         <img
-//           height={200}
-//           src="/src/img/service.jpeg"
-//           alt="Service"
-//           onClick={() => handleClick("Service")}
-//         />
-//         <p>Service</p>
-//       </div>
-
-//       {selectedTopic && (
-//         <>
-//           <h2>Speeches on "{selectedTopic}"</h2>
-//           {loading && <p>Loading speeches...</p>}{" "}
-//           {/* Display loading message */}
-//           {error && <p>{error}</p>} {/* Display error message */}
-//           {filteredSpeeches.length === 0 && !loading && !error ? (
-//             <p>No speeches found.</p>
-//           ) : (
-//             <ul>
-//               {filteredSpeeches.map((s) => (
-//                 <li key={s.speechId}>
-//                   <strong>{s.speechTitle}</strong> by {s.speaker} (
-//                   {s.dateSpeechGiven})
-//                 </li>
-//               ))}
-//             </ul>
-//           )}
-//           {/* {speeches.length === 0 && !loading && !error ? (
-//             <p>No speeches found.</p> // If there are no speeches and not loading
-//           ) : (
-//             <ul>
-//               {speeches.map(
-//                 (
-//                   s: any // Assuming the type of speech is 'any'
-//                 ) => (
-//                   <li key={s.speechId}>
-//                     <strong>{s.speechTitle}</strong> by {s.speaker} (
-//                     {s.dateSpeechGiven})
-//                   </li>
-//                 )
-//               )}
-//             </ul>
-//           )} */}
-//         </>
-//       )}
-//       <br />
-//       <br />
-//       <br />
-//     </>
-//   );
-// }
-
-// export default Topics;
-
 import { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../css/Topics.css";
 
 function Topics() {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
@@ -253,97 +52,71 @@ function Topics() {
   };
 
   return (
-    <>
-      <h1>Topics</h1>
-      <div>
-        <img
-          height={200}
-          src="/src/img/jesus.webp"
-          alt="Jesus Christ"
-          onClick={() => handleClick("Jesus")}
-        />
-        <p>Jesus Christ</p>
-
-        <img
-          height={200}
-          src="/src/img/church_logo.png"
-          alt="Core Beliefs"
-          onClick={() => handleClick("Beliefs")}
-        />
-        <p>Core Beliefs</p>
-
-        <img
-          height={200}
-          src="/src/img/faith.jpg"
-          alt="Faith"
-          onClick={() => handleClick("Faith")}
-        />
-        <p>Faith</p>
-
-        <img
-          height={200}
-          src="/src/img/Repentance.png"
-          alt="Repentance"
-          onClick={() => handleClick("Repentance")}
-        />
-        <p>Repentance</p>
-
-        <img
-          height={200}
-          src="/src/img/baptism.png"
-          alt="Baptism"
-          onClick={() => handleClick("Baptism")}
-        />
-        <p>Baptism</p>
-
-        <img
-          height={200}
-          src="/src/img/washington_dc_temple.webp"
-          alt="Temple"
-          onClick={() => handleClick("Temple")}
-        />
-        <p>Temple</p>
-
-        <img
-          height={200}
-          src="/src/img/jesus.webp"
-          alt="Prayer"
-          onClick={() => handleClick("Prayer")}
-        />
-        <p>Prayer</p>
-
-        <img
-          height={200}
-          src="/src/img/service.jpeg"
-          alt="Service"
-          onClick={() => handleClick("Service")}
-        />
-        <p>Service</p>
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Topics</h1>
+      <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+        {[
+          { src: "/src/img/jesus.webp", alt: "Jesus Christ", label: "Jesus" },
+          {
+            src: "/src/img/church_logo.png",
+            alt: "Core Beliefs",
+            label: "Beliefs",
+          },
+          { src: "/src/img/faith.jpg", alt: "Faith", label: "Faith" },
+          {
+            src: "/src/img/Repentance.png",
+            alt: "Repentance",
+            label: "Repentance",
+          },
+          { src: "/src/img/baptism.png", alt: "Baptism", label: "Baptism" },
+          {
+            src: "/src/img/washington_dc_temple.webp",
+            alt: "Temple",
+            label: "Temple",
+          },
+          { src: "/src/img/prayer.png", alt: "Prayer", label: "Prayer" },
+          { src: "/src/img/service.jpeg", alt: "Service", label: "Service" },
+        ].map((topic, index) => (
+          <div className="col" key={index}>
+            <div
+              className="card text-center shadow-sm clickable"
+              onClick={() => handleClick(topic.label)}
+            >
+              <img
+                src={topic.src}
+                className="card-img-top"
+                alt={topic.alt}
+                style={{ height: "200px", objectFit: "cover" }}
+              />
+              <div className="card-body">
+                <p className="card-text fw-bold">{topic.label}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
       {selectedTopic && (
-        <>
+        <div className="mt-5">
           <h2>Speeches on "{selectedTopic}"</h2>
           {loading && <p>Loading speeches...</p>}
-          {error && <p>{error}</p>}
+          {error && <p className="text-danger">{error}</p>}
 
           {filteredSpeeches.length === 0 && !loading && !error ? (
             <p>No speeches found.</p>
           ) : (
-            <ul>
+            <ul className="list-group mt-3">
               {filteredSpeeches.map((s) => (
-                <li key={s.speechId}>
+                <li key={s.speechId} className="list-group-item">
                   <strong>{s.speechTitle}</strong> by {s.speaker} on{" "}
                   {formatDate(s.dateSpeechGiven)}
                 </li>
               ))}
             </ul>
           )}
-        </>
+        </div>
       )}
-      <br />
-      <br />
-    </>
+      <br /> <br /> <br />
+    </div>
   );
 }
 
