@@ -1,21 +1,36 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Card from "./Card";
+import Card from "../src/components/Card";
+import Header from "../src/components/Header";
+import Navbar from "../src/components/Navbar";
 
 export default function ProfilePage() {
   return (
     <div
-      className="flex justify-center items-center min-h-screen w-full text-white p-4"
-      style={{ backgroundColor: "#111827" }}
+      style={{
+        minHeight: "100vh",
+        width: "100vw",
+        overflowX: "hidden",
+        backgroundColor: "#111827",
+        color: "white",
+        paddingBottom: "6rem", // leave space for navbar
+      }}
     >
+      <Header />
+      <Navbar setCurrentView={() => {}} onSearch={() => {}} />
+
       <div
-        className="container d-flex flex-column align-items-center text-white p-4 rounded"
-        style={{ maxWidth: "600px", width: "90%", backgroundColor: "#111827" }}
+        style={{
+          maxWidth: "600px",
+          margin: "0 auto",
+          padding: "1rem",
+        }}
       >
-        <Card title="User Profile">
-          <div className="container text-left mt-3 pb-3">
-            <div className="d-flex flex-column align-items-center">
+        {/* Wrap the card in a text-center container */}
+        <div className="text-center">
+          <Card title="User Profile">
+            <div className="mt-3 pb-3">
               <div
-                className="card p-4 rounded shadow-lg w-100"
+                className="card p-4 rounded shadow-lg w-100 text-center"
                 style={{ backgroundColor: "#111827" }}
               >
                 <div className="mb-3">
@@ -46,12 +61,12 @@ export default function ProfilePage() {
                   <p className="fw-bold" style={{ color: "#5dade2" }}>
                     Password:
                   </p>
-                  <p className="text-white">********</p>
+                  <p className="text-white">password123</p>
                 </div>
               </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
       </div>
     </div>
   );

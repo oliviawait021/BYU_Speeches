@@ -4,6 +4,7 @@ import CalendarPage from "./pages/CalendarPage";
 import HomePage from "./pages/HomePage";
 import BYUSpeech from "./pages/speech";
 import Topics from "./pages/Topics";
+import ProfilePage from "./ProfilePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Speech } from "./types/Speeches";
 import Navbar from "./components/Navbar";
