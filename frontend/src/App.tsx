@@ -46,7 +46,7 @@ export default function App() {
         <Route path="/speech" element={<BYUSpeech />} />
         <Route path="/topic" element={<Topics />} />
         <Route path="/search" element={<div>search!</div>} />
-        <Route path="/profile" element={<div>profile!</div>} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/login" element={<div>login!</div>} />
       </Routes>
     </Router>
