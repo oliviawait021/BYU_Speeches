@@ -119,6 +119,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         <div onClick={() => navigate("/topic")}>
           <BookIcon color="white" size={28} />
         </div>
+        {/* ✅ Profile icon routes to /login */}
         <div onClick={() => navigate("/login")}>
           <User color="white" size={28} />
         </div>

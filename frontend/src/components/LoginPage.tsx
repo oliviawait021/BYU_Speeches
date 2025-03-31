@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // ← add this
 import '../css/LoginPage.css';
-
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // ← add this
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Logging in with ${username} and ${password}`);
+
+    // TODO: You can add real validation/auth here later
+    navigate('/profile'); // ← navigate to profile on submit
   };
 
   return (
