@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jacobhouston/BYU_Speeches-2/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj": {}
+    "/Users/annamiyoshi/Desktop/IS401Project/BYU_Speeches/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj": {}
   },
   "projects": {
-    "/Users/jacobhouston/BYU_Speeches-2/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj": {
+    "/Users/annamiyoshi/Desktop/IS401Project/BYU_Speeches/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jacobhouston/BYU_Speeches-2/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj",
+        "projectUniqueName": "/Users/annamiyoshi/Desktop/IS401Project/BYU_Speeches/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj",
         "projectName": "BYUSpeechesApp",
-        "projectPath": "/Users/jacobhouston/BYU_Speeches-2/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj",
-        "packagesPath": "/Users/jacobhouston/.nuget/packages/",
-        "outputPath": "/Users/jacobhouston/BYU_Speeches-2/backend/BYUSpeechesApp/BYUSpeechesApp/obj/",
+        "projectPath": "/Users/annamiyoshi/Desktop/IS401Project/BYU_Speeches/backend/BYUSpeechesApp/BYUSpeechesApp/BYUSpeechesApp.csproj",
+        "packagesPath": "/Users/annamiyoshi/.nuget/packages/",
+        "outputPath": "/Users/annamiyoshi/Desktop/IS401Project/BYU_Speeches/backend/BYUSpeechesApp/BYUSpeechesApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jacobhouston/.nuget/NuGet/NuGet.Config"
+          "/Users/annamiyoshi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -88,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

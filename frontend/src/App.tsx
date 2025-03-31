@@ -23,7 +23,7 @@ export default function App() {
   useEffect(() => {
     const fetchSpeeches = async () => {
       try {
-        const response = await fetch("http://localhost:5276/Speech");
+        const response = await fetch("http://localhost:5276/Speech/default");
         if (!response.ok) throw new Error("Failed to fetch speeches");
         const data = await response.json();
         setSpeeches(data);
@@ -40,7 +40,10 @@ export default function App() {
       <Navbar onSearch={handleSearch} />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/calendar" element={<CalendarPage speeches={speeches} />} />
+        <Route
+          path="/calendar"
+          element={<CalendarPage speeches={speeches} />}
+        />
         <Route path="/speech" element={<BYUSpeech />} />
         <Route path="/topic" element={<Topics />} />
         <Route path="/search" element={<div>search!</div>} />
